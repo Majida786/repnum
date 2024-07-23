@@ -1,0 +1,25 @@
+function mostRepeatedNumber(arr) {
+  let arrayNum = {};
+
+  
+  for (let num of arr) {
+    if (arrayNum[num]) {
+      arrayNum[num]++;
+    } else {
+      arrayNum [num] = 1;
+    }
+  }
+
+  let maxNum = 0;
+  let mostRep = null;
+  for (let num in arrayNum) {
+    if (arrayNum [num] > maxNum) {
+      maxNum = arrayNum [num];
+      mostRep = num;
+    }
+  }
+
+  return mostRep;
+}
+
+console.log(mostRepeatedNumber([1, 3, 2, 3, 4, 1, 3]));
